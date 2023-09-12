@@ -4,18 +4,14 @@ import "./Form.css";
 const tgbot = window.Telegram.WebApp;
 
 const Form = () => {
-  const [country, setCountry] = useState("");
-  const [street, setStreet] = useState("");
-  const [subject, setSubject] = useState("physical");
+  const [name, setName] = useState("");
 
   const onSendData = useCallback(() => {
     const data = {
-      country,
-      street,
-      subject,
+      name,
     };
     tgbot.sendData(JSON.stringify(data));
-  }, [country, street, subject]);
+  }, [name]);
 
   useEffect(() => {
     tgbot.onEvent("mainButtonClicked", onSendData);
@@ -31,23 +27,15 @@ const Form = () => {
   }, []);
 
   useEffect(() => {
-    if (!street || !country) {
+    if (!name) {
       tgbot.MainButton.hide();
     } else {
       tgbot.MainButton.show();
     }
-  }, [country, street]);
+  }, [name]);
 
   const onChangeCountry = (e) => {
-    setCountry(e.target.value);
-  };
-
-  const onChangeStreet = (e) => {
-    setStreet(e.target.value);
-  };
-
-  const onChangeSubject = (e) => {
-    setSubject(e.target.value);
+    setName(e.target.value);
   };
 
   return (
@@ -57,20 +45,9 @@ const Form = () => {
         className={"input"}
         type="text"
         placeholder={"Страна"}
-        value={country}
+        value={name}
         onChange={onChangeCountry}
       />
-      <input
-        className={"input"}
-        type="text"
-        placeholder={"Улица"}
-        value={street}
-        onChange={onChangeStreet}
-      />
-      <select value={subject} onChange={onChangeSubject} className={"select"}>
-        <option value={"physical"}>Физ. лицо</option>
-        <option value={"legal"}>Юр. лицо</option>
-      </select>
     </div>
   );
 };
