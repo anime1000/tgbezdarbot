@@ -26,6 +26,14 @@ export const Form = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (name) {
+      tgbot.MainButton.show();
+    } else {
+      tgbot.MainButton.hide();
+    }
+  }, [name]);
+
   return (
     <input
       className="out"
