@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProductList.css";
 
 import { ProductItem } from "../ProductItem/ProductItem";
+
+const tgbot = window.Telegram.WebApp;
 
 const products = [
   {
@@ -38,6 +40,17 @@ const products = [
 ];
 
 export const ProductList = () => {
+  useEffect(() => {
+    tgbot.MainButton.show();
+  }, []);
+
+  useEffect(() => {
+    tgbot.onEvent("mainButtonClicked", tgbot.close);
+    return () => {
+      tgbot.offEvent("mainButtonClicked", tgbot.close);
+    };
+  }, []);
+
   return (
     <div className={"list"}>
       {products.map((item) =>
