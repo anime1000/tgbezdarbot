@@ -1,11 +1,18 @@
 import React from "react";
 
+const tgbot = window.Telegram.WebApp;
 export const useTelegram = () => {
-  const tgbot = window.Telegram.WebApp;
-
   const onClose = () => {
     tgbot.close();
   };
 
-  return { onClose, tgbot };
+  const onToggleButton = () => {
+    if (tgbot.MainButton.isVisible) {
+      tgbot.MainButton.hide();
+    } else {
+      tgbot.MainButton.show();
+    }
+  };
+
+  return { onToggleButton, onClose, tgbot };
 };

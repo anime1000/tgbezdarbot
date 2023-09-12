@@ -4,7 +4,7 @@ import { useTelegram } from "../hooks/useTelegram";
 import { Header } from "./components/Header/Header";
 
 function App() {
-  const { tgbot } = useTelegram();
+  const { tgbot, onToggleButton } = useTelegram();
 
   useEffect(() => {
     tgbot.expand();
@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <button onClick={onToggleButton}>toggle</button>
     </div>
   );
 }
