@@ -7,10 +7,7 @@ export const Form = () => {
   const [name, setName] = useState("");
 
   const onSendData = useCallback(() => {
-    const data = {
-      name,
-    };
-    tgbot.sendData(JSON.stringify(data));
+    tgbot.sendData(name);
   }, [name]);
 
   useEffect(() => {
