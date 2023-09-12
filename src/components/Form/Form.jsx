@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./Form.css";
 
 const tgbot = window.Telegram.WebApp;
 
 export const Form = () => {
   const [name, setName] = useState("");
+
+  const onSendData = useCallback(() => {
+    const data = {
+      name,
+    };
+    tgbot.sendData(JSON.stringify(data));
+  }, [name]);
+
+  useEffect(() => {
+    tgbot.onEvent("mainButtonClicked", onSendData);
+
+    return () => {
+      tgbot.offEvent("mainButtonClicked", onSendData);
+    };
+  }, [onSendData]);
 
   if (name) {
     tgbot.MainButton.show();
