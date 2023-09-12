@@ -10,18 +10,20 @@ export const Form = () => {
     const data = {
       name,
     };
-
-    console.log(data);
     tgbot.sendData(JSON.stringify(data));
   }, [name]);
 
   useEffect(() => {
     tgbot.onEvent("mainButtonClicked", onSendData);
-
     return () => {
       tgbot.offEvent("mainButtonClicked", onSendData);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onSendData]);
+
+  useEffect(() => {
+    tgbot.MainButton.setParams({
+      text: "Отправить данные",
+    });
   }, []);
 
   if (name) {
