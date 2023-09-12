@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header";
 import { Route, Routes } from "react-router-dom";
-import { Form } from "./components/Form/Form";
+import Form from "./components/Form/Form";
 import { ProductList } from "./components/ProductList/ProductList";
 
 function App() {
