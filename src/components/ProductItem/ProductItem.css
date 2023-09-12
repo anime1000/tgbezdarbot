@@ -1,0 +1,20 @@
+.outlineLead {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.numberLead {
+  font-size: 16px;
+}
+.dateLead {
+  font-size: 13px;
+}
+.nameLead {
+  font-size: 13px;
+}
+
+.btnLead {
+  padding: 2px 5px;
+  background: red;
+  color: #fff;
+}
