@@ -10,6 +10,8 @@ export const Form = () => {
     const data = {
       name,
     };
+
+    console.log(data);
     tgbot.sendData(JSON.stringify(data));
   }, [name]);
 
@@ -19,7 +21,7 @@ export const Form = () => {
     return () => {
       tgbot.offEvent("mainButtonClicked", onSendData);
     };
-  }, [onSendData]);
+  }, []);
 
   if (name) {
     tgbot.MainButton.show();
