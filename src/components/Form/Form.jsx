@@ -6,7 +6,7 @@ export const Form = () => {
   return (
     <input
       className="out"
-      onChange={(e) => setName(e)}
+      onChange={(e) => setName(e.target.value)}
       value={name}
       placeholder="your name in Google Sheets"
     />
