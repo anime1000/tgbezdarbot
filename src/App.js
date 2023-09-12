@@ -14,14 +14,6 @@ function App() {
     tgbot.ready();
   }, [tgbot]);
 
-  const onToggleButton = () => {
-    if (tgbot.MainButton.isVisible) {
-      tgbot.MainButton.hide();
-    } else {
-      tgbot.MainButton.show();
-    }
-  };
-
   return (
     <div className="App">
       <Header />
