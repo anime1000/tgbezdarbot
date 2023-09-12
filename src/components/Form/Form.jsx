@@ -44,7 +44,7 @@ const Form = () => {
       <input
         className={"input"}
         type="text"
-        placeholder={"Страна"}
+        placeholder={"Your name Google Sheets"}
         value={name}
         onChange={onChangeCountry}
       />
