@@ -3,12 +3,19 @@ import "./Form.css";
 
 const tgbot = window.Telegram.WebApp;
 
-export const Form = () => {
-  const [name, setName] = useState("");
+const Form = () => {
+  const [country, setCountry] = useState("");
+  const [street, setStreet] = useState("");
+  const [subject, setSubject] = useState("physical");
 
   const onSendData = useCallback(() => {
-    tgbot.sendData(name);
-  }, [name]);
+    const data = {
+      country,
+      street,
+      subject,
+    };
+    tgbot.sendData(JSON.stringify(data));
+  }, [country, street, subject]);
 
   useEffect(() => {
     tgbot.onEvent("mainButtonClicked", onSendData);
@@ -24,19 +31,48 @@ export const Form = () => {
   }, []);
 
   useEffect(() => {
-    if (name) {
-      tgbot.MainButton.show();
-    } else {
+    if (!street || !country) {
       tgbot.MainButton.hide();
+    } else {
+      tgbot.MainButton.show();
     }
-  }, [name]);
+  }, [country, street]);
+
+  const onChangeCountry = (e) => {
+    setCountry(e.target.value);
+  };
+
+  const onChangeStreet = (e) => {
+    setStreet(e.target.value);
+  };
+
+  const onChangeSubject = (e) => {
+    setSubject(e.target.value);
+  };
 
   return (
-    <input
-      className="out"
-      onChange={(e) => setName(e.target.value)}
-      value={name}
-      placeholder="your name in Google Sheets"
-    />
+    <div className={"form"}>
+      <h3>Введите ваши данные</h3>
+      <input
+        className={"input"}
+        type="text"
+        placeholder={"Страна"}
+        value={country}
+        onChange={onChangeCountry}
+      />
+      <input
+        className={"input"}
+        type="text"
+        placeholder={"Улица"}
+        value={street}
+        onChange={onChangeStreet}
+      />
+      <select value={subject} onChange={onChangeSubject} className={"select"}>
+        <option value={"physical"}>Физ. лицо</option>
+        <option value={"legal"}>Юр. лицо</option>
+      </select>
+    </div>
   );
 };
+
+export default Form;
