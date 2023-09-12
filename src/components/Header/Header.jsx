@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "../Button/Button";
 
 export const Header = () => {
-  // const { tgbot, onClose } = useTelegram();
   const tgbot = window.Telegram.WebApp;
 
   const onClose = () => {

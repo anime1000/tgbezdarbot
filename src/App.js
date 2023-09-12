@@ -6,7 +6,6 @@ import { Form } from "./components/Form/Form";
 import { ProductList } from "./components/ProductList/ProductList";
 
 function App() {
-  // const { tgbot, onToggleButton } = useTelegram();
   const tgbot = window.Telegram.WebApp;
 
   useEffect(() => {
