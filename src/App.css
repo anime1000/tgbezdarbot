@@ -1,4 +1,14 @@
 @import url("./null.css");
 
 .App {
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+}
+
+a {
+  color: var(--tg-theme-link-color);
+}
+
+p {
+  color: var(--tg-theme-button-text-color);
 }

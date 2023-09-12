@@ -1,16 +1,15 @@
 import { useEffect } from "react";
 import "./App.css";
+import { useTelegram } from "../hooks/useTelegram";
 import { Header } from "./components/Header/Header";
 
 function App() {
-  const tgbot = window.Telegram.WebApp;
+  const { tgbot } = useTelegram();
 
   useEffect(() => {
     tgbot.expand();
+    tgbot.ready();
   }, [tgbot]);
-
-  tgbot.MainButton.textColor = "#fff";
-  tgbot.MainButton.color = "#2cab37";
 
   return (
     <div className="App">
