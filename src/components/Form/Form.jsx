@@ -21,6 +21,7 @@ export const Form = () => {
     return () => {
       tgbot.offEvent("mainButtonClicked", onSendData);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (name) {
