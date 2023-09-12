@@ -42,6 +42,9 @@ const products = [
 export const ProductList = () => {
   useEffect(() => {
     tgbot.MainButton.show();
+    tgbot.MainButton.setParams({
+      text: "Закрыть окно",
+    });
   }, []);
 
   useEffect(() => {
