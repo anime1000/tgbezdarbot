@@ -6,7 +6,7 @@ export const Header = () => {
   const { tgbot, onClose } = useTelegram();
 
   return (
-    <div>
+    <div className="header">
       <span className="username">{tgbot.initDataUnsafe?.user?.username}</span>
       <Button text={"Закрыть"} onClick={onClose} />
     </div>
