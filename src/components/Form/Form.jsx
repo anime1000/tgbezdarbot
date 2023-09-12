@@ -26,12 +26,6 @@ export const Form = () => {
     });
   }, []);
 
-  if (name) {
-    tgbot.MainButton.show();
-  } else {
-    tgbot.MainButton.hide();
-  }
-
   return (
     <input
       className="out"
