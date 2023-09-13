@@ -53,7 +53,7 @@ export const ProductList = () => {
   return (
     <div className="list">
       <div className="googleshnickname">
-        google sheets nickname - {localStgName}
+        nickname - {localStgName ? localStgName : "Введите имя пользователя"}
       </div>
       {users.length ? (
         users.map((item) => {
