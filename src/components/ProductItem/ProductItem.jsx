@@ -5,9 +5,6 @@ import { Modal } from "../Modal/Modal";
 export const ProductItem = ({ numberLead, dateLead, nameLead, flats }) => {
   const [openModal, setOpenModal] = useState(false);
 
-  function onCloseModal() {
-    setOpenModal(false);
-  }
   return (
     <div className="outlineLead">
       <p className="numberLead">
