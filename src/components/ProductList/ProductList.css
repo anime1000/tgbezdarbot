@@ -5,3 +5,13 @@
   gap: 10px;
   justify-content: center;
 }
+
+.loading,
+.noname,
+.error,
+.nousers {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}

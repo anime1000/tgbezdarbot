@@ -35,7 +35,7 @@ export const ProductList = () => {
   }, []);
 
   if (loading) {
-    return <div className="loading">ЗАГРУЗКА</div>;
+    return <div className="loading">ЗАГРУЗКА ДАННЫХ...</div>;
   }
 
   if (!localStgName) {
@@ -51,7 +51,7 @@ export const ProductList = () => {
   }
 
   return (
-    <div className={"list"}>
+    <div className="list">
       {users.length ? (
         users.map((item) => {
           return (
