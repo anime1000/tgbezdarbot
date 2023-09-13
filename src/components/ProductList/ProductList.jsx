@@ -66,9 +66,12 @@ export const ProductList = () => {
     const response = await axios.post("http://localhost:4444/users", {
       name: "Вадим Семенов",
     });
-
     return setUsers(response.data);
   }, []);
+
+  if (users.length) {
+    console.log("s");
+  }
 
   useEffect(() => {
     fetchName();
