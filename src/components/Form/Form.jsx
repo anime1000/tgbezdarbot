@@ -46,25 +46,27 @@ const Form = () => {
   };
 
   return (
-    <div className={"form"}>
-      <h3>Введите ваши данные</h3>
-      {!localsthName ? (
-        <input
-          className={"input"}
-          type="text"
-          placeholder={"Your name Google Sheets"}
-          value={name}
-          onChange={onChangeCountry}
-        />
-      ) : (
-        <input
-          className={"input"}
-          type="text"
-          placeholder={`Your name Google Sheets`}
-          value={localsthName}
-          onChange={onChangeCountry}
-        />
-      )}
+    <div className="wrapper">
+      <div className="form">
+        <h3 className="title">Введите ваши данные: </h3>
+        {!localsthName ? (
+          <input
+            className={"out"}
+            type="text"
+            placeholder={"Your name Google Sheets"}
+            value={name}
+            onChange={onChangeCountry}
+          />
+        ) : (
+          <input
+            className={"out"}
+            type="text"
+            placeholder={`Your name Google Sheets`}
+            value={localsthName}
+            onChange={onChangeCountry}
+          />
+        )}
+      </div>
     </div>
   );
 };
