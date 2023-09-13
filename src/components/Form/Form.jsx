@@ -8,6 +8,7 @@ const tgbot = window.Telegram.WebApp;
 const Form = () => {
   const dispatch = useDispatch();
   const name = useSelector((state) => state.name.name);
+  const localsthName = localStorage.getItem("name");
 
   const onSendData = useCallback(() => {
     const data = {
@@ -47,13 +48,23 @@ const Form = () => {
   return (
     <div className={"form"}>
       <h3>Введите ваши данные</h3>
-      <input
-        className={"input"}
-        type="text"
-        placeholder={"Your name Google Sheets"}
-        value={name}
-        onChange={onChangeCountry}
-      />
+      {!localsthName ? (
+        <input
+          className={"input"}
+          type="text"
+          placeholder={"Your name Google Sheets"}
+          value={name}
+          onChange={onChangeCountry}
+        />
+      ) : (
+        <input
+          className={"input"}
+          type="text"
+          placeholder={`Your name Google Sheets`}
+          value={localsthName}
+          onChange={onChangeCountry}
+        />
+      )}
     </div>
   );
 };
