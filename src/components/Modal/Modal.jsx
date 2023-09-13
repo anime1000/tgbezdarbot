@@ -2,7 +2,7 @@ import React from "react";
 import { ProductFlats } from "../ProductFlats/ProductFlats";
 import "./Modal.css";
 
-export const Modal = ({ children, isOpen, onClose, flats }) => {
+export const Modal = ({ isOpen, onClose, flats }) => {
   const onContentClick = (event) => {
     event.stopPropagation();
   };
@@ -15,12 +15,10 @@ export const Modal = ({ children, isOpen, onClose, flats }) => {
 
   return (
     <div className={`Modal ${isOpen === true ? "isOpened" : ""}`}>
-      <div className="overlay">
+      <div className="overlay" onClick={onCloseModalHandler}>
         <div className="content" onClick={onContentClick}>
           <ProductFlats flats={flats} />
-          <button className="btnClose" onClick={onCloseModalHandler}>
-            close modal
-          </button>
+          <button className="btnClose">close modal</button>
         </div>
       </div>
     </div>
