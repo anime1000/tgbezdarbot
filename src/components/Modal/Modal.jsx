@@ -17,7 +17,7 @@ export const Modal = ({ isOpen, onClose, flats }) => {
     <div className={`Modal ${isOpen === true ? "isOpened" : ""}`}>
       <div className="overlay" onClick={onCloseModalHandler}>
         <div className="content" onClick={onContentClick}>
-          <ProductFlats flats={flats} />
+          <ProductFlats flats={flats} onClose={onClose} isOpen={isOpen} />
         </div>
       </div>
     </div>

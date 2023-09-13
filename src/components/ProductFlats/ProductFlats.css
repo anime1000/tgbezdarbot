@@ -4,3 +4,11 @@
   z-index: 10;
   width: 100%;
 }
+
+.btnclosepopup {
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  font-size: 17px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
