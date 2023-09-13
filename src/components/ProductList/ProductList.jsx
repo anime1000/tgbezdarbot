@@ -52,7 +52,8 @@ export const ProductList = () => {
 
   useEffect(() => {
     fetchName();
-  }, [fetchName]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     tgbot.MainButton.show();
@@ -79,6 +80,7 @@ export const ProductList = () => {
             numberLead={item.numberClient}
             key={item.numberClient}
             nameLead={item.name_client}
+            flats={item.flats}
           />
         ) : undefined
       )}
