@@ -15,3 +15,9 @@
   height: 100vh;
   align-items: center;
 }
+
+.googleshnickname {
+  color: var(--tg-theme-text-color);
+  font-size: 14px;
+  text-align: center;
+}
