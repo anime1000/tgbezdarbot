@@ -43,10 +43,9 @@ export const ProductList = () => {
   const [users, setUsers] = useState([]);
 
   const fetchName = useCallback(async () => {
-    const response = await axios.post(
-      "http://localhost:4444/users",
-      "Вадим Семенов"
-    );
+    const response = await axios.post("http://localhost:4444/users", {
+      name: "Вадим Семенов",
+    });
 
     return setUsers(response.data);
   }, []);
