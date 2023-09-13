@@ -41,11 +41,13 @@ const tgbot = window.Telegram.WebApp;
 
 export const ProductList = () => {
   const [users, setUsers] = useState([]);
+
   const fetchName = useCallback(async () => {
     const response = await axios.post(
       "http://localhost:4444/users",
       "Вадим Семенов"
     );
+
     return setUsers(response.data);
   }, []);
 
@@ -66,6 +68,8 @@ export const ProductList = () => {
       tgbot.offEvent("mainButtonClicked", tgbot.close);
     };
   }, []);
+
+  console.log(users);
 
   return (
     <div className={"list"}>
