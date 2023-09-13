@@ -35,15 +35,19 @@ export const ProductList = () => {
   }, []);
 
   if (loading) {
-    return "ЗАГРУЗКА";
+    return <div className="loading">ЗАГРУЗКА</div>;
   }
 
   if (!localStgName) {
-    return "НЕТУ ИМЕНИ";
+    return <div className="noname">НЕТУ ИМЕНИ</div>;
   }
 
   if (error) {
-    return "smth went wrong, try it later pls";
+    return <div className="error">ОШИБКА, ПОПРОБУЙТЕ ПОЗЖЕ</div>;
+  }
+
+  if (!users || users === null || users.length === 0) {
+    return <div className="nousers">НИЧЕГО НЕ НАЙДЕНО</div>;
   }
 
   return (
