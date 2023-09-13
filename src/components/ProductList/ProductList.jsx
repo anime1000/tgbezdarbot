@@ -10,10 +10,12 @@ export const ProductList = () => {
   const loading = useSelector((state) => state.name.isLoading);
   const dispatch = useDispatch();
   const users = useSelector((state) => state.name.users);
+  const localStgName = localStorage.getItem("name");
 
   useEffect(() => {
-    const localStgName = localStorage.getItem("name");
-    dispatch(NameTHUNK(localStgName));
+    if (localStgName) {
+      dispatch(NameTHUNK(localStgName));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -35,6 +37,10 @@ export const ProductList = () => {
     return "ЗАГРУЗКА";
   }
 
+  if (!localStgName) {
+    return "НЕТУ ИМЕНИ";
+  }
+
   return (
     <div className={"list"}>
       {users.length
@@ -49,7 +55,7 @@ export const ProductList = () => {
               />
             ) : undefined
           )
-        : "НЕТУ ИМЕНИ"}
+        : "НИЧЕГО НЕ НАЙДЕНО"}
     </div>
   );
 };
