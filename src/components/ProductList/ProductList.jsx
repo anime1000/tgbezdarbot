@@ -37,12 +37,12 @@ export const ProductList = () => {
 
   return (
     <div className={"list"}>
-      {users.map((item) =>
+      {users.map((item, i) =>
         item.flats.length ? (
           <ProductItem
             dateLead={item.date}
             numberLead={item.numberClient}
-            key={item.numberClient}
+            key={i}
             nameLead={item.name_client}
             flats={item.flats}
           />
