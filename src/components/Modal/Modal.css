@@ -23,7 +23,8 @@
   border-radius: 12px;
   background: #fff;
   background-color: var(--tg-theme-bg-color);
-  border: 1px solid red;
+  border: 1px solid var(--tg-theme-text-color);
+  color: var(--tg-theme-text-color);
 }
 
 .isOpened.Modal {
