@@ -51,25 +51,27 @@ export const ProductList = () => {
   }
 
   return (
-    <div className="list">
+    <>
       <div className="googleshnickname">
         nickname - {localStgName ? localStgName : "Введите имя пользователя"}
       </div>
-      {users.length ? (
-        users.map((item) => {
-          return (
-            <ProductItem
-              key={item.numberLead}
-              dateLead={item.date}
-              numberLead={item.numberClient}
-              nameLead={item.name_client}
-              flats={item.flats}
-            />
-          );
-        })
-      ) : (
-        <div className="nousers">НИЧЕГО НЕ НАЙДЕНО</div>
-      )}
-    </div>
+      <div className="list">
+        {users.length ? (
+          users.map((item) => {
+            return (
+              <ProductItem
+                key={item.numberLead}
+                dateLead={item.date}
+                numberLead={item.numberClient}
+                nameLead={item.name_client}
+                flats={item.flats}
+              />
+            );
+          })
+        ) : (
+          <div className="nousers">НИЧЕГО НЕ НАЙДЕНО</div>
+        )}
+      </div>
+    </>
   );
 };
