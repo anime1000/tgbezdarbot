@@ -1,11 +1,11 @@
 import React from "react";
 import { Flats } from "./Flats";
 
-export const ProductFlats = ({ flats, isOpen, onClose }) => {
+export const ProductFlats = ({ flats }) => {
   return (
     <div>
       {flats.map((item) => {
-        return <Flats items={item} key={item.LOT} onClose={onClose} />;
+        return <Flats items={item} key={item.LOT} />;
       })}
     </div>
   );

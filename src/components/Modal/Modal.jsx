@@ -7,11 +7,20 @@ export const Modal = ({ children, isOpen, onClose, flats }) => {
     event.stopPropagation();
   };
 
+  const onCloseModalHandler = () => {
+    if (isOpen) {
+      onClose();
+    }
+  };
+
   return (
     <div className={`Modal ${isOpen === true ? "isOpened" : ""}`}>
       <div className="overlay">
         <div className="content" onClick={onContentClick}>
-          <ProductFlats flats={flats} onClose={onClose} isOpen={isOpen} />
+          <ProductFlats flats={flats} />
+          <button className="btnClose" onClick={onCloseModalHandler}>
+            close modal
+          </button>
         </div>
       </div>
     </div>
