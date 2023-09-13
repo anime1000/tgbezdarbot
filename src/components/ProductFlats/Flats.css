@@ -1,21 +1,28 @@
 .flats {
-  color: var(--tg-theme-text-color);
+  /* color: var(--tg-theme-text-color); */
+  color: #000;
 }
 .LOT {
-  color: var(--tg-theme-text-color);
+  /* color: var(--tg-theme-text-color); */
+  color: #000;
 }
 .Responsible {
-  color: var(--tg-theme-text-color);
+  /* color: var(--tg-theme-text-color); */
+  color: #000;
 }
 .rooms {
-  color: var(--tg-theme-text-color);
+  /* color: var(--tg-theme-text-color); */
+  color: #000;
 }
 .buget {
-  color: var(--tg-theme-text-color);
+  /* color: var(--tg-theme-text-color); */
+  color: #000;
 }
 .hasRenovation {
-  color: var(--tg-theme-text-color);
+  /* color: var(--tg-theme-text-color); */
+  color: #000;
 }
 .area {
-  color: var(--tg-theme-text-color);
+  /* color: var(--tg-theme-text-color); */
+  color: #000;
 }

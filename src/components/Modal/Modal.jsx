@@ -18,7 +18,6 @@ export const Modal = ({ isOpen, onClose, flats }) => {
       <div className="overlay" onClick={onCloseModalHandler}>
         <div className="content" onClick={onContentClick}>
           <ProductFlats flats={flats} />
-          <button className="btnClose">close modal</button>
         </div>
       </div>
     </div>
