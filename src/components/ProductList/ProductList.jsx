@@ -52,19 +52,21 @@ export const ProductList = () => {
 
   return (
     <div className={"list"}>
-      {users.length
-        ? users.map((item, i) =>
-            item.flats.length ? (
-              <ProductItem
-                dateLead={item.date}
-                numberLead={item.numberClient}
-                key={i}
-                nameLead={item.name_client}
-                flats={item.flats}
-              />
-            ) : undefined
-          )
-        : "НИЧЕГО НЕ НАЙДЕНО"}
+      {users.length ? (
+        users.map((item) => {
+          return (
+            <ProductItem
+              key={item.numberLead}
+              dateLead={item.date}
+              numberLead={item.numberClient}
+              nameLead={item.name_client}
+              flats={item.flats}
+            />
+          );
+        })
+      ) : (
+        <div className="nousers">НИЧЕГО НЕ НАЙДЕНО</div>
+      )}
     </div>
   );
 };
