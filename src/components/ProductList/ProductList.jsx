@@ -11,6 +11,7 @@ export const ProductList = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.name.users);
   const localStgName = localStorage.getItem("name");
+  const error = useSelector((state) => state.name.error);
 
   useEffect(() => {
     if (localStgName) {
@@ -39,6 +40,10 @@ export const ProductList = () => {
 
   if (!localStgName) {
     return "НЕТУ ИМЕНИ";
+  }
+
+  if (error) {
+    return "smth went wrong, try it later pls";
   }
 
   return (
