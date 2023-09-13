@@ -1,4 +1,5 @@
 import React from "react";
+import "./Flats.css";
 
 export const Flats = ({ items }) => {
   return (
