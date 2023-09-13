@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { NameTHUNK } from "./NameTHUNK";
 
 const initialState = {
-  name: "Вадим Семенов",
+  name: "",
   users: [],
   isLoading: false,
   error: "",

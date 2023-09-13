@@ -41,6 +41,7 @@ const Form = () => {
 
   const onChangeCountry = (e) => {
     dispatch(setName(e.target.value));
+    localStorage.setItem("name", e.target.value);
   };
 
   return (

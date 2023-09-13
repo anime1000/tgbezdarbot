@@ -7,13 +7,13 @@ import { useDispatch, useSelector } from "react-redux";
 const tgbot = window.Telegram.WebApp;
 
 export const ProductList = () => {
-  const name = useSelector((state) => state.name.name);
   const loading = useSelector((state) => state.name.isLoading);
   const dispatch = useDispatch();
   const users = useSelector((state) => state.name.users);
 
   useEffect(() => {
-    dispatch(NameTHUNK(name));
+    const localStgName = localStorage.getItem("name");
+    dispatch(NameTHUNK(localStgName));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
