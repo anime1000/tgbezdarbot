@@ -5,6 +5,60 @@ import { ProductItem } from "../ProductItem/ProductItem";
 import axios from "axios";
 const tgbot = window.Telegram.WebApp;
 
+const users1 = [
+  {
+    date: "01.08.2023",
+    name_client: "илья",
+    rooms: "1",
+    buget: "42000",
+    hasRenovation: "с ремонтом",
+    area: "Гонио",
+    respnseble: "Вадим Семенов",
+    numberClient: "Лид6",
+    flats: [],
+  },
+  {
+    date: "01.08.2023",
+    name_client: "вадим",
+    rooms: "1+1",
+    buget: "177000",
+    hasRenovation: "с ремонтом",
+    area: "Гонио",
+    respnseble: "Вадим Семенов",
+    numberClient: "Лид6",
+    flats: [
+      {
+        LOT: "1882ВС",
+        respnseble: "Вадим Семенов",
+        rooms: "1+1",
+        buget: "177000",
+        hasRenovation: "с ремонтом",
+        area: "Гонио",
+      },
+    ],
+  },
+  {
+    date: "01.08.2023",
+    name_client: "Герман",
+    rooms: "1+1",
+    buget: "83000",
+    hasRenovation: "с ремонтом",
+    area: "Батуми",
+    respnseble: "Вадим Семенов",
+    numberClient: "Лид6",
+    flats: [
+      {
+        LOT: "1884ВС",
+        respnseble: "Вадим Семенов",
+        rooms: "1+1",
+        buget: "83000",
+        hasRenovation: "с ремонтом",
+        area: "Батуми",
+      },
+    ],
+  },
+];
+
 export const ProductList = () => {
   const [users, setUsers] = useState([]);
 
@@ -37,7 +91,7 @@ export const ProductList = () => {
 
   return (
     <div className={"list"}>
-      {users.map((item, i) =>
+      {users1.map((item, i) =>
         item.flats.length ? (
           <ProductItem
             dateLead={item.date}
