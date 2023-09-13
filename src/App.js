@@ -11,7 +11,6 @@ function App() {
   useEffect(() => {
     tgbot.expand();
     tgbot.ready();
-    tgbot.platform = "Clients";
   }, [tgbot]);
 
   return (
