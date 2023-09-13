@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ProductItem.css";
-import { Modal } from "../Modal/Modal";
+// import { Modal } from "../Modal/Modal";
 
 export const ProductItem = ({ numberLead, dateLead, nameLead, flats }) => {
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="outlineLead">
@@ -14,11 +14,11 @@ export const ProductItem = ({ numberLead, dateLead, nameLead, flats }) => {
         {dateLead ? `Дата - ${dateLead}` : "- No date"}
       </p>
       <p className="nameLead">{nameLead ? `Имя - ${nameLead}` : "- No name"}</p>
-      <button className="btnLead" onClick={() => setOpenModal(true)}>
+      {/* <button className="btnLead" onClick={() => setOpenModal(true)}>
         Объекты {flats.length ? `(${flats.length})` : undefined}
-      </button>
+      </button> */}
 
-      <Modal isOpen={openModal} onClose={setOpenModal} flats={flats} />
+      {/* <Modal isOpen={openModal} onClose={setOpenModal} flats={flats} /> */}
     </div>
   );
 };
