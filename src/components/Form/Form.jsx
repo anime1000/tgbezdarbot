@@ -1,17 +1,22 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
+import { setName } from "../../store/slices/NameSlice";
 import "./Form.css";
+import { useDispatch, useSelector } from "react-redux";
 
 const tgbot = window.Telegram.WebApp;
 
 const Form = () => {
-  const [name, setName] = useState("");
+  const dispatch = useDispatch();
+  const name = useSelector((state) => state.name.name);
 
   const onSendData = useCallback(() => {
     const data = {
       name,
     };
+    dispatch(setName(data.name));
+
     tgbot.sendData(JSON.stringify(data));
-  }, [name]);
+  }, [name, dispatch]);
 
   useEffect(() => {
     tgbot.onEvent("mainButtonClicked", onSendData);
@@ -35,7 +40,7 @@ const Form = () => {
   }, [name]);
 
   const onChangeCountry = (e) => {
-    setName(e.target.value);
+    dispatch(setName(e.target.value));
   };
 
   return (
